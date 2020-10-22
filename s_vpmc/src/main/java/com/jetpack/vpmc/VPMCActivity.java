@@ -1,4 +1,4 @@
-package com.naruto.vpmc;
+package com.jetpack.vpmc;
 
 import android.os.Bundle;
 import android.view.View;

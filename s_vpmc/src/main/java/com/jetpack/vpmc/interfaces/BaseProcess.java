@@ -1,4 +1,4 @@
-package com.naruto.vpmc.interfaces;
+package com.jetpack.vpmc.interfaces;
 
 import androidx.annotation.CallSuper;
 

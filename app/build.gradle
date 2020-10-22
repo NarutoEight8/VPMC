@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.naruto.dispatchersample"
+        applicationId "com.jetpack.sample"
         minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
@@ -28,6 +28,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     implementation 'com.google.android.material:material:1.2.1'
     implementation project(':s_vpmc')
+//    implementation 'com.github.repository8:jetpack.vpmc:1.0.1'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'

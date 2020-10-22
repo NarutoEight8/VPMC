@@ -1,15 +1,14 @@
-package com.naruto.dispatchersample;
+package com.jetpack.sample;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.viewbinding.ViewBinding;
 
+import com.jetpack.vpmc.VPMCFragment;
+import com.jetpack.vpmc.VPMCPresenter;
 import com.naruto.dispatchersample.databinding.ActivityMainBinding;
-import com.naruto.vpmc.VPMCFragment;
-import com.naruto.vpmc.VPMCPresenter;
 
 public class MainFragment extends VPMCFragment {
 

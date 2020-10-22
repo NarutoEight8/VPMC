@@ -1,21 +1,13 @@
-package com.naruto.dispatchersample;
+package com.jetpack.sample;
 
 import android.content.Intent;
-import android.os.Bundle;
 
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewbinding.ViewBinding;
 
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-
+import com.jetpack.vpmc.VPMCActivity;
 import com.naruto.dispatchersample.databinding.ActivityMainBinding;
-import com.naruto.vpmc.VPMCActivity;
-import com.naruto.vpmc.VPMCPresenter;
 
 
 public class MainActivity extends VPMCActivity<MainVPMCPresenter> {

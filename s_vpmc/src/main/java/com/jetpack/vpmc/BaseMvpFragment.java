@@ -1,29 +1,32 @@
-package com.naruto.vpmc;
+package com.jetpack.vpmc;
 
-import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 
-public abstract class BaseMvpActivity<P extends BaseMvpPresenter,CONTRACT> extends Activity implements View.OnClickListener {
+public abstract class BaseMvpFragment<P extends BaseMvpPresenter,CONTRACT> extends Fragment implements View.OnClickListener {
     public P mPresenter;
     protected abstract CONTRACT getContract();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(onCreateViewByID());
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(onCreateViewByID(), container, false);
         initViews();
         initEvents();
         mPresenter = getmPresenterInstance();
         mPresenter.bindView(this);
+        return view;
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         mPresenter.unBindView();
         super.onDestroy();
     }
+
 
     protected abstract int onCreateViewByID();
     protected abstract void initViews();
