@@ -10,14 +10,6 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    //1. Proj classpath
-//    classpath 'com.jakewharton:butterknife-gradle-plugin:10.0.0'
-    //2. 指定jdk版本
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    //3. install plugin
 
     buildTypes {
         debug {
@@ -27,6 +19,9 @@ android {
             consumerProguardFiles 'proguard-rules.pro'
         }
     }
+    buildFeatures{
+        viewBinding= true
+    }
     lintOptions {
         abortOnError false
     }
@@ -35,6 +30,4 @@ dependencies {
     implementation "com.google.code.gson:gson:2.8.5"
     implementation "androidx.appcompat:appcompat:1.2.0"
     implementation 'com.google.android.material:material:1.2.1'
-    implementation 'com.jakewharton:butterknife:10.1.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
 }

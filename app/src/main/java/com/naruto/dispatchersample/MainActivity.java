@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewbinding.ViewBinding;
 
 import android.util.Log;
 import android.view.View;
@@ -12,34 +13,29 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.naruto.dispatchersample.databinding.ActivityMainBinding;
 import com.naruto.vpmc.VPMCActivity;
 import com.naruto.vpmc.VPMCPresenter;
 
 
 public class MainActivity extends VPMCActivity<MainVPMCPresenter> {
-    private TextView txt_result,txt_name;
-    private Button btn_start,btn_switch;
-    private EditText edit_input;
+    private ActivityMainBinding binding;
 
     @Override
-    protected int onCreateViewByID() {
-        return R.layout.activity_main;
+    protected ViewBinding getBinding() {
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        return binding;//R.layout.activity_main
     }
 
     @Override
     protected void initViews() {
-        txt_name = findViewById(R.id.txt_name);
-        txt_result = findViewById(R.id.txt_result);
-        btn_start = findViewById(R.id.btn_start);
-        btn_switch = findViewById(R.id.btn_switch);
-        edit_input = findViewById(R.id.edit_input);
-        txt_name.setText("Activity:"+MainActivity.class.getSimpleName());
+        binding.txtName.setText("Activity:"+MainActivity.class.getSimpleName());
     }
 
     @Override
     protected void initEvents() {
-        btn_start.setOnClickListener(this);
-        btn_switch.setOnClickListener(this);
+        binding.btnStart.setOnClickListener(this);
+        binding.btnSwitch.setOnClickListener(this);
     }
     public void doingSth(){
 
@@ -48,10 +44,10 @@ public class MainActivity extends VPMCActivity<MainVPMCPresenter> {
 
     @Override
     public void onClick(View v) {
-        if(v==btn_start){
+        if(v==binding.btnStart){
             mPresenter.doingSth();
-            txt_result.setText("结果："+ edit_input.getText().toString().trim());
-        }else if(v==btn_switch){
+            binding.txtResult.setText("结果："+ binding.editInput.getText().toString().trim());
+        }else if(v==binding.btnSwitch){
             finish();
             Intent intent = new Intent(MainActivity.this,ActivityNext.class);
             startActivity(intent);

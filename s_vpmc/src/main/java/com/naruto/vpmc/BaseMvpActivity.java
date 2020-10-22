@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
-import butterknife.ButterKnife;
 
 public abstract class BaseMvpActivity<P extends BaseMvpPresenter,CONTRACT> extends Activity implements View.OnClickListener {
     public P mPresenter;
@@ -14,7 +13,6 @@ public abstract class BaseMvpActivity<P extends BaseMvpPresenter,CONTRACT> exten
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(onCreateViewByID());
-        ButterKnife.bind(this);
         initViews();
         initEvents();
         mPresenter = getmPresenterInstance();
