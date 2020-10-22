@@ -1,4 +1,4 @@
-package com.naruto.dispatchersample;
+package com.jetpack.sample;
 
 import android.content.Intent;
 import android.os.Bundle;

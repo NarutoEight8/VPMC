@@ -1,4 +1,4 @@
-package com.naruto.vpmc;
+package com.jetpack.vpmc;
 
 public abstract class BaseMvpModel<P extends BaseMvpPresenter,CONTRACT> extends SupperBase<CONTRACT> {
     public P mPresenter;

@@ -1,4 +1,4 @@
-package com.naruto.vpmc;
+package com.jetpack.vpmc;
 
 public abstract class VPMCPresenter<V>{
     public V mView;

@@ -1,8 +1,8 @@
-package com.naruto.dispatchersample;
+package com.jetpack.sample;
 
 import android.util.Log;
 
-import com.naruto.vpmc.VPMCPresenter;
+import com.jetpack.vpmc.VPMCPresenter;
 
 public class MainVPMCPresenter extends VPMCPresenter<MainActivity> {
 

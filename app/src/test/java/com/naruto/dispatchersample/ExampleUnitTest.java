@@ -1,4 +1,4 @@
-package com.naruto.dispatchersample;
+package com.jetpack.sample;
 
 import org.junit.Test;
 
