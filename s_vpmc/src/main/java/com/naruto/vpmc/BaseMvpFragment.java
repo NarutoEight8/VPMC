@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.ButterKnife;
 
 public abstract class BaseMvpFragment<P extends BaseMvpPresenter,CONTRACT> extends Fragment implements View.OnClickListener {
     public P mPresenter;
@@ -15,7 +14,6 @@ public abstract class BaseMvpFragment<P extends BaseMvpPresenter,CONTRACT> exten
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(onCreateViewByID(), container, false);
-        ButterKnife.bind(this,view);
         initViews();
         initEvents();
         mPresenter = getmPresenterInstance();

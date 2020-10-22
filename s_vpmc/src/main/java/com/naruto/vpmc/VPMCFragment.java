@@ -6,21 +6,30 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewbinding.ViewBinding;
 
-import butterknife.ButterKnife;
+/**
 
+ private ActivityMainBinding binding;
+
+ @Override
+ protected ViewBinding getBinding(LayoutInflater inflater, ViewGroup container) {
+ binding = ActivityMainBinding.inflate(inflater,container,false);//R.layout.activity_main
+ return binding;
+ }
+
+ */
 public abstract class VPMCFragment<P extends VPMCPresenter> extends Fragment implements View.OnClickListener {
     public P mPresenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(onCreateViewByID(), container, false);
+        ViewBinding viewBinding = getBinding(inflater,container);
         mPresenter = getmPresenterInstance();
         if(mPresenter!=null)mPresenter.bindView(this);
-        ButterKnife.bind(this,view);
         initViews();
         initEvents();
-        return view;
+        return viewBinding.getRoot();
     }
 
     @Override
@@ -29,7 +38,7 @@ public abstract class VPMCFragment<P extends VPMCPresenter> extends Fragment imp
         super.onDestroy();
     }
 
-    protected abstract int onCreateViewByID();
+    protected abstract ViewBinding getBinding(LayoutInflater inflater, ViewGroup container);
     protected abstract void initViews();
     protected abstract void initEvents();
     protected abstract P getmPresenterInstance();
