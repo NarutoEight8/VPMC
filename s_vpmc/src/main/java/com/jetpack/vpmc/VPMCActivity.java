@@ -31,6 +31,9 @@ public abstract class VPMCActivity<P extends VPMCPresenter> extends AppCompatAct
 
     @Override
     protected void onDestroy() {
+        /**
+         * 2021/01/19 change this place
+         */
         if(mPresenter!=null)mPresenter.unBindView();
         super.onDestroy();
     }
