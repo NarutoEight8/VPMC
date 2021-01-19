@@ -31,7 +31,7 @@ public abstract class VPMCActivity<P extends VPMCPresenter> extends AppCompatAct
 
     @Override
     protected void onDestroy() {
-        mPresenter.unBindView();
+        if(mPresenter!=null)mPresenter.unBindView();
         super.onDestroy();
     }
 
@@ -71,5 +71,9 @@ public abstract class VPMCActivity<P extends VPMCPresenter> extends AppCompatAct
          binding= ItemBeautyBinding.bind(itemView);
     }
  }
+
+ 在View中使用
+ LayoutInflater.from(context).inflate(R.layout.clip_report_doubleslow, this, true);
+ binding = ClipReportDoubleslowBinding.bind(this);
 
  */
