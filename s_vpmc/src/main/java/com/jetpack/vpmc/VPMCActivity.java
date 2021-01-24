@@ -25,6 +25,7 @@ public abstract class VPMCActivity<P extends VPMCPresenter> extends AppCompatAct
         setContentView(getBinding().getRoot());
         mPresenter = getmPresenterInstance();
         if(mPresenter!=null)mPresenter.bindView(this);
+        if(mPresenter == null)mPresenter = null;
         initViews();
         initEvents();
     }
